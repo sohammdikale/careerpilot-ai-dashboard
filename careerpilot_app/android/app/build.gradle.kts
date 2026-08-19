@@ -4,7 +4,7 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-android {
+android { 
     namespace = "com.careerpilot.careerpilot_app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
