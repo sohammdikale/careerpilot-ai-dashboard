@@ -1,114 +1,622 @@
 # 🚀 CareerPilot AI Dashboard
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi)](https://fastapi.tiangolo.com)
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python)](https://python.org)
-[![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart)](https://dart.dev)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+### AI-Powered Career Growth & Job-Readiness Platform
 
-**CareerPilot AI Dashboard** is a state-of-the-art career growth and job-readiness intelligence platform. Powered by a **Flutter** mobile frontend and a **Python FastAPI** backend service, CareerPilot provides real-time ATS resume scoring, AI-driven skill gap detection, interactive career roadmaps, hands-on project recommendations, and an AI voice mock interview coach.
+CareerPilot AI Dashboard is an intelligent career development platform designed to help students and job seekers understand their career readiness, identify skill gaps, improve their resumes, follow personalized career roadmaps, discover relevant projects, and practice interviews with AI-powered feedback.
+
+Built with **Flutter** and **Python FastAPI**, CareerPilot provides a modern dashboard experience with a connected REST API backend.
+
+---
+
+## 🎯 Problem Statement
+
+Students and job seekers often struggle to understand:
+
+* What skills are required for their target role
+* Which skills they are currently missing
+* Whether their resume is ATS-friendly
+* Which projects they should build
+* How to prepare for technical interviews
+* How to track their career preparation progress
+
+CareerPilot brings these activities into a single platform and provides actionable, personalized career guidance.
+
+---
+
+## 💡 Solution
+
+CareerPilot AI analyzes a user's career profile, skills, resume, and target role to provide:
+
+> **Career Readiness → Skill Gap → Roadmap → Projects → Resume Improvement → Interview Preparation → Progress Tracking**
+
+This creates a complete career-preparation workflow instead of relying on multiple disconnected tools.
 
 ---
 
 ## ✨ Key Features
 
-- **⚡ AI Readiness Engine**: Calculates target role compatibility (e.g. *Machine Learning Engineer*) and highlights immediate high-impact actions.
-- **🎯 Skill Gap Analysis**: Interactive proficiencies across AI/ML, Cloud/MLOps, Backend, and Data Engineering with target role requirements.
-- **🗺️ Interactive Career Roadmap**: Structured multi-phase milestones (*Foundations*, *Core ML*, *Production Deployment*) with progress tracking.
-- **📄 Resume Intelligence (ATS Evaluator)**: Detailed breakdown of ATS compatibility scores, impact metrics, keyword coverage, formatting structure, and 1-click AI suggestions.
-- **💡 AI Project Recommendations**: Customized hands-on projects with domain tags, difficulty ratings, estimated completion times, and match scores.
-- **🎙️ AI Mock Interview Coach**: Real-time voice/text answer submission with AI scoring across *Clarity*, *Technical Depth*, and *Confidence*, paired with actionable coach feedback.
-- **📈 Progress Analytics**: Interactive weekly trend charts powered by `fl_chart` tracking study streak and score trajectory.
-- **🔌 Configurable REST Backend**: Live sync with FastAPI server, featuring preset connection chips for Android Emulator (`10.0.2.2:8000`), Localhost (`localhost:8000`), or custom LAN IP, plus graceful offline fallback.
+### ⚡ AI Career Readiness
+
+Get an overall understanding of your readiness for a selected target role.
+
+* Target role compatibility
+* Readiness score
+* High-impact improvement areas
+* Actionable career recommendations
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+### 🎯 Skill Gap Analysis
 
+Understand the difference between your current skills and the skills required for your target role.
+
+* Skill proficiency tracking
+* Target-role requirements
+* Skill gap identification
+* Category-wise analysis
+* Progress tracking
+
+Supported areas include:
+
+* 🤖 AI / Machine Learning
+* ☁️ Cloud & MLOps
+* ⚙️ Backend Development
+* 📊 Data Engineering
+
+---
+
+### 🗺️ Interactive Career Roadmap
+
+Follow a structured learning path toward your target career.
+
+Example:
+
+```text
+Foundation
+    ↓
+Programming & Mathematics
+    ↓
+Core Machine Learning
+    ↓
+Deep Learning
+    ↓
+MLOps & Deployment
+    ↓
+Real-World Projects
+    ↓
+Interview Preparation
 ```
+
+Users can track completed milestones and monitor their progress.
+
+---
+
+### 📄 Resume Intelligence & ATS Evaluation
+
+Analyze your resume and identify areas that can be improved.
+
+The resume intelligence module provides:
+
+* ATS compatibility score
+* Keyword coverage
+* Resume structure analysis
+* Impact metrics
+* Formatting insights
+* AI-powered improvement suggestions
+
+Users can review suggestions and apply relevant improvements.
+
+---
+
+### 💡 AI Project Recommendations
+
+Get project ideas based on your target role and current skill profile.
+
+Each recommendation can include:
+
+* Project title
+* Domain
+* Difficulty level
+* Estimated completion time
+* Skill requirements
+* Match score
+* Save/bookmark functionality
+
+This helps users build projects that are relevant to their career goals rather than choosing random projects.
+
+---
+
+### 🎙️ AI Mock Interview Coach
+
+Practice technical interviews through the platform.
+
+The interview module evaluates responses based on:
+
+* 🗣️ Clarity
+* 🧠 Technical depth
+* 💪 Confidence
+* 📝 Overall response quality
+
+The system provides actionable feedback to help users improve their interview performance.
+
+---
+
+### 📊 Progress Analytics
+
+Track career preparation over time through interactive analytics.
+
+Metrics include:
+
+* Weekly progress
+* Study streak
+* Score trends
+* Career preparation activity
+
+---
+
+### 🔌 REST API Backend
+
+CareerPilot uses a Python FastAPI backend to communicate with the Flutter application.
+
+The backend provides:
+
+* RESTful API endpoints
+* Data validation with Pydantic
+* CORS support
+* Profile management
+* Skill management
+* Resume data
+* Roadmap data
+* Project recommendations
+* Interview evaluation
+* Analytics
+
+Interactive API documentation is available through FastAPI Swagger UI.
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                 ┌─────────────────────┐
+                 │        USER         │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │   Flutter Frontend  │
+                 │   Mobile Dashboard  │
+                 └──────────┬──────────┘
+                            │
+                       REST API
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │   FastAPI Backend   │
+                 │    Python Server    │
+                 └──────────┬──────────┘
+                            │
+          ┌─────────────────┼─────────────────┐
+          │                 │                 │
+          ▼                 ▼                 ▼
+   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+   │ Resume / ATS│   │ Skill Gap   │   │ Career      │
+   │ Intelligence│   │ Analysis    │   │ Roadmap     │
+   └─────────────┘   └─────────────┘   └─────────────┘
+          │                 │                 │
+          └─────────────────┼─────────────────┘
+                            │
+                            ▼
+                  ┌───────────────────┐
+                  │ Career Insights & │
+                  │ Recommendations   │
+                  └───────────────────┘
+                            │
+                            ▼
+                  ┌───────────────────┐
+                  │ User Progress &   │
+                  │ Interview Feedback│
+                  └───────────────────┘
+```
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+* **Flutter**
+* **Dart**
+* Provider
+* fl_chart
+* REST API integration
+* Responsive UI
+
+## Backend
+
+* **Python**
+* **FastAPI**
+* **Uvicorn**
+* **Pydantic**
+* REST APIs
+* CORS middleware
+
+## AI / Intelligence
+
+* Resume analysis
+* ATS scoring
+* Skill-gap analysis
+* Career matching
+* Project recommendation
+* Interview response evaluation
+
+## Development Tools
+
+* Git
+* GitHub
+* VS Code
+* Android Studio
+* Flutter SDK
+
+---
+
+# 📂 Project Structure
+
+```text
 careerpilot-ai-dashboard/
-├── careerpilot_app/               # Flutter Cross-Platform Application
+│
+├── careerpilot_app/
+│   │
 │   ├── lib/
-│   │   ├── models/                # App models with JSON serialization
-│   │   ├── providers/             # State management (Provider) & API sync
-│   │   ├── screens/               # 10 Screen modules (Dashboard, Resume, Mock Interview, etc.)
-│   │   ├── services/              # HTTP API Service client
-│   │   ├── theme/                 # Dark/Light color tokens & typography
-│   │   └── widgets/               # Reusable UI shells & navigation drawer
-│   └── backend/                   # Python FastAPI REST Backend
-│       ├── main.py                # FastAPI routes & CORS middleware
-│       ├── schemas.py             # Pydantic data validation schemas
-│       ├── store.py               # Prepopulated CareerPilot data store
-│       └── run_backend.py         # Uvicorn server runner script
+│   │   ├── models/
+│   │   │   └── JSON data models
+│   │   │
+│   │   ├── providers/
+│   │   │   └── State management & API synchronization
+│   │   │
+│   │   ├── screens/
+│   │   │   └── Dashboard, Resume, Skills, Roadmap,
+│   │   │       Projects, Mock Interview, Analytics
+│   │   │
+│   │   ├── services/
+│   │   │   └── HTTP API client
+│   │   │
+│   │   ├── theme/
+│   │   │   └── Theme & typography
+│   │   │
+│   │   └── widgets/
+│   │       └── Reusable UI components
+│   │
+│   ├── backend/
+│   │   ├── main.py
+│   │   ├── schemas.py
+│   │   ├── store.py
+│   │   ├── run_backend.py
+│   │   └── requirements.txt
+│   │
+│   └── build/
+│       └── app-release.apk
+│
+├── stitch_careerpilot_ai_dashboard/
+│
+├── .gitignore
+└── README.md
+```
+
+The repository currently contains the Flutter application and its FastAPI backend, with separate model, provider, screen, service, theme, and widget layers.
+
+---
+
+# 🔄 Application Workflow
+
+```text
+User Creates Career Profile
+            ↓
+      Select Target Role
+            ↓
+      Enter / Update Skills
+            ↓
+     CareerPilot Analysis
+            ↓
+ ┌──────────┼──────────┐
+ ↓          ↓          ↓
+Skill     Resume     Career
+Gap       ATS        Roadmap
+ ↓          ↓          ↓
+ └──────────┼──────────┘
+            ↓
+   Project Recommendations
+            ↓
+   Mock Interview Practice
+            ↓
+     AI Feedback & Scores
+            ↓
+      Progress Analytics
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+# 🌐 API Endpoints
 
-### Prerequisites
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (`^3.12`)
-- [Python 3.10+](https://www.python.org/downloads/)
+| Method       | Endpoint                            | Purpose                         |
+| ------------ | ----------------------------------- | ------------------------------- |
+| `GET`        | `/health`                           | Check backend health            |
+| `GET / PUT`  | `/api/profile`                      | Get or update user profile      |
+| `GET / POST` | `/api/skills`                       | Manage user skills              |
+| `PUT`        | `/api/skills/{id}`                  | Update skill proficiency        |
+| `GET`        | `/api/roadmap`                      | Get career roadmap              |
+| `POST`       | `/api/roadmap/{id}/toggle`          | Mark roadmap milestone          |
+| `GET`        | `/api/resume`                       | Get ATS resume analysis         |
+| `POST`       | `/api/resume/apply-suggestion/{id}` | Apply resume suggestion         |
+| `GET`        | `/api/projects`                     | Get project recommendations     |
+| `POST`       | `/api/projects/{id}/toggle-save`    | Save a project                  |
+| `GET`        | `/api/interviews`                   | Get interview questions/history |
+| `POST`       | `/api/interviews/evaluate`          | Evaluate interview response     |
+| `GET`        | `/api/analytics`                    | Get progress analytics          |
 
-### 1. Start the FastAPI Backend Server
+The current repository exposes these FastAPI routes for profile, skills, roadmap, resume, projects, interviews, and analytics functionality.
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Make sure you have installed:
+
+* Flutter SDK `3.12+`
+* Python `3.10+`
+* Git
+* Android Studio or another Flutter-supported development environment
+
+---
+
+## 1️⃣ Clone the Repository
+
 ```bash
-# Navigate to the backend directory
+git clone https://github.com/sohammdikale/careerpilot-ai-dashboard.git
+```
+
+```bash
+cd careerpilot-ai-dashboard
+```
+
+---
+
+## 2️⃣ Start the FastAPI Backend
+
+Navigate to the backend:
+
+```bash
 cd careerpilot_app/backend
+```
 
-# Install dependencies
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-# Launch server
+Start the backend:
+
+```bash
 python run_backend.py
 ```
-> The API server starts on **`http://0.0.0.0:8000`**. You can view interactive API documentation at **`http://localhost:8000/docs`**.
 
-### 2. Run the Flutter Mobile Application
+The API server runs on:
+
+```text
+http://localhost:8000
+```
+
+FastAPI documentation:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## 3️⃣ Run the Flutter Application
+
+Open another terminal:
+
 ```bash
-# Navigate to the Flutter app directory
 cd careerpilot_app
+```
 
-# Fetch dependencies
+Install Flutter dependencies:
+
+```bash
 flutter pub get
+```
 
-# Launch app on device / emulator
+Run the application:
+
+```bash
 flutter run
 ```
 
 ---
 
-## 🌐 API Endpoint Reference
+# 📱 Android APK
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/health` | Server health & readiness check |
-| `GET` / `PUT` | `/api/profile` | Read and update user profile & target role |
-| `GET` / `POST` | `/api/skills` | List skills or add a new skill |
-| `PUT` | `/api/skills/{id}` | Update skill proficiency level |
-| `GET` | `/api/roadmap` | Retrieve career roadmap milestones |
-| `POST` | `/api/roadmap/{id}/toggle` | Toggle milestone completion status |
-| `GET` | `/api/resume` | Fetch ATS resume score and suggestions |
-| `POST` | `/api/resume/apply-suggestion/{id}` | Apply AI resume improvement suggestion |
-| `GET` | `/api/projects` | List AI project recommendations |
-| `POST` | `/api/projects/{id}/toggle-save` | Save or bookmark a project |
-| `GET` | `/api/interviews` | List mock interview questions and history |
-| `POST` | `/api/interviews/evaluate` | Evaluate interview response & return AI scores |
-| `GET` | `/api/analytics` | Fetch weekly progress metrics |
+A release APK is included in the project build outputs:
+
+```text
+careerpilot_app/build/app/outputs/flutter-apk/app-release.apk
+```
+
+You can transfer the APK to an Android device and install it directly.
+
+> For security reasons, Android may require permission to install applications from unknown sources.
 
 ---
 
-## 📱 Android APK Installation
+# 🎨 UI & Design
 
-A pre-built release APK is available under the build outputs:
-- **Location**: `careerpilot_app/build/app/outputs/flutter-apk/app-release.apk`
+CareerPilot follows a modern dashboard-oriented design focused on:
 
-To install on your Android device:
-1. Copy `app-release.apk` to your phone.
-2. Open the file on your device and enable **Install from unknown sources** if prompted.
-3. Tap **Install** and launch **CareerPilot AI**.
+* Minimal navigation
+* Clear information hierarchy
+* Career progress visualization
+* Interactive cards
+* Skill progress indicators
+* Charts and analytics
+* Dark / light theme support
+* Mobile-friendly layouts
+
+The Flutter application uses reusable widgets, centralized theme definitions, and Provider-based state management to keep the interface modular and maintainable.
 
 ---
 
-## 📜 License
+# 🧠 Core Concepts Demonstrated
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This project demonstrates practical concepts in:
+
+### Artificial Intelligence
+
+* AI-powered recommendations
+* Resume intelligence
+* Career matching
+* Interview evaluation
+
+### Software Development
+
+* REST API architecture
+* Client-server communication
+* State management
+* JSON serialization
+* Data validation
+* API integration
+
+### Mobile Development
+
+* Flutter
+* Dart
+* Cross-platform application development
+* Reusable UI components
+* Responsive dashboard design
+
+### Backend Development
+
+* Python
+* FastAPI
+* REST APIs
+* Pydantic schemas
+* Uvicorn
+* CORS
+
+---
+
+# 🔮 Future Scope
+
+CareerPilot can be expanded with:
+
+* 🤖 Advanced LLM-powered career assistant
+* 📄 Automatic PDF/DOCX resume parsing
+* 🔍 Real-time job recommendations
+* 💼 Job application tracking
+* 🔗 LinkedIn profile analysis
+* 🧠 Personalized learning recommendations
+* 📚 Course and certification recommendations
+* 🎤 Advanced voice-based interviews
+* 🗣️ Speech-to-text interview analysis
+* 📊 Advanced career analytics
+* ☁️ Cloud deployment
+* 🔐 User authentication
+* 🗄️ Production database integration
+* 👥 Multi-user profiles
+* 🌐 Web dashboard version
+
+---
+
+# 📌 Project Highlights
+
+| Area             | Implementation     |
+| ---------------- | ------------------ |
+| Mobile App       | Flutter            |
+| Backend          | Python FastAPI     |
+| API              | REST               |
+| State Management | Provider           |
+| Resume Analysis  | ATS Intelligence   |
+| Career Analysis  | Skill Gap          |
+| Planning         | Career Roadmap     |
+| Projects         | AI Recommendations |
+| Interviews       | AI Evaluation      |
+| Analytics        | Interactive Charts |
+| Deployment       | Android APK        |
+
+---
+
+# 🎓 Educational Purpose
+
+CareerPilot AI Dashboard was developed as a practical project to explore the integration of:
+
+**Artificial Intelligence + Mobile Development + Backend APIs + Career Analytics**
+
+The project demonstrates how multiple technologies can be combined into a single real-world application that addresses a practical problem faced by students and job seekers.
+
+---
+
+# 🤝 Contributing
+
+Contributions and suggestions are welcome.
+
+### Steps
+
+1. Fork the repository
+2. Create a new branch
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Make your changes
+4. Commit your changes
+
+```bash
+git commit -m "Add your feature"
+```
+
+5. Push your branch
+
+```bash
+git push origin feature/your-feature
+```
+
+6. Open a Pull Request
+
+---
+
+# ⭐ Support
+
+If you find **CareerPilot AI Dashboard** useful or interesting, consider giving the repository a ⭐ on GitHub.
+
+**Repository:**
+https://github.com/sohammdikale/careerpilot-ai-dashboard
+
+---
+
+# 👨‍💻 Author
+
+## Soham Dikale
+
+**B.Tech — Artificial Intelligence & Data Science**
+
+Interested in:
+
+* 🤖 Artificial Intelligence
+* 🧠 Machine Learning
+* 📊 Data Science
+* 🐍 Python
+* 📱 Flutter
+* 🌐 Full-Stack Development
+
+---
+
+# 📄 License
+
+This project is distributed under the **MIT License**.
+
+See the `LICENSE` file for more information.
