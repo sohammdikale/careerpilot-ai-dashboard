@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - CareerPilot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#07006c",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#4d44e3",
+                        "surface-dim": "#d3daef",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-secondary-container": "#fffbff",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-container": "#e9edff",
+                        "tertiary": "#7e3000",
+                        "inverse-surface": "#293040",
+                        "background": "#f9f9ff",
+                        "primary-fixed": "#e2dfff",
+                        "secondary-fixed": "#e1e0ff",
+                        "primary-container": "#4f46e5",
+                        "on-surface-variant": "#464555",
+                        "secondary-container": "#6063ee",
+                        "surface-variant": "#dce2f7",
+                        "surface-container-high": "#e1e8fd",
+                        "inverse-on-surface": "#edf0ff",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c7c4d8",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-surface": "#141b2b",
+                        "surface-container-highest": "#dce2f7",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#141b2b",
+                        "surface-container-low": "#f1f3ff",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface": "#f9f9ff",
+                        "tertiary-container": "#a44100",
+                        "on-primary-container": "#dad7ff",
+                        "on-tertiary-fixed": "#351000",
+                        "primary": "#3525cd",
+                        "on-tertiary-container": "#ffd2be",
+                        "surface-bright": "#f9f9ff",
+                        "secondary": "#4648d4",
+                        "outline": "#777587"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-sm": "8px",
+                        "unit-md": "16px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px",
+                        "unit-xs": "4px",
+                        "gutter": "24px",
+                        "unit-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Soft Ambient Shadow */
+        .shadow-ambient {
+            box-shadow: 0 4px 20px -2px rgba(79, 70, 229, 0.05);
+        }
+        .shadow-ambient-hover:hover {
+            box-shadow: 0 10px 30px -4px rgba(79, 70, 229, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        /* Glassmorphism subtle effect for badges */
+        .glass-badge {
+            background: rgba(79, 70, 229, 0.08);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary">
+<!-- SideNav (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant py-unit-lg px-unit-md gap-unit-sm z-50">
+<!-- Brand Header -->
+<div class="px-unit-sm mb-unit-lg">
+<h1 class="font-display text-headline-md text-primary">CareerPilot AI</h1>
+<p class="font-body-md text-on-surface-variant text-label-sm mt-1">AI Career Mentor</p>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-3 rounded-lg mb-unit-md hover:scale-[0.98] transition-transform flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined">add</span>
+            New Career Goal
+        </button>
+<!-- Navigation Links -->
+<nav class="flex-1 flex flex-col gap-1 overflow-y-auto pr-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">person</span>
+                My Profile
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">psychology</span>
+                Skills
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">description</span>
+                Resume Intelligence
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">analytics</span>
+                Skill Gap
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">route</span>
+                Career Roadmap
+            </a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-primary font-bold bg-primary-container/10 transition-all font-label-md text-label-md scale-[0.98]" href="#">
+<span class="material-symbols-outlined filled">folder_shared</span>
+                Projects
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">forum</span>
+                Mock Interview
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">trending_up</span>
+                Progress
+            </a>
+</nav>
+<!-- Footer Links -->
+<div class="mt-auto pt-unit-md border-t border-outline-variant/30 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-error transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full md:ml-64 bg-background min-h-screen">
+<!-- Mobile Top Nav -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile w-full h-16 bg-surface shadow-sm sticky top-0 z-40 border-b border-outline-variant/30">
+<h1 class="font-display text-headline-lg-mobile text-primary">CareerPilot AI</h1>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant border border-outline-variant overflow-hidden cursor-pointer">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a young adult looking optimistic, set against a clean, light mode corporate background with soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwYLjbzSIxbiIBYsWu0eHmaov_4monHZT8wnKCZh7HwJRCn8amPJrZmaML_RLwxqIMATBS43-D3UDNlQyC5D4zm44h1d4t-nGjZUtWRGBz0wuf8TGYFTXHFkbaqvw0z2rmrvj-92jh07E9aSh57-Ha2V4tPSGHMRlY1wWO4T777t6i15SOce1KLIQ2LYjyvBdy5m0O8Bf4dskkCgqNE3tzErsK6xeLMHxLCbq78u4KFrLKz6cIN78m"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto space-y-12 pb-24">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-2">Projects That Strengthen Your Profile</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Build projects that directly close your career skill gaps.</p>
+</div>
+<!-- Desktop Search & Notifications (Replaces TopNav functionally for this specific view) -->
+<div class="hidden md:flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-10 pr-4 py-2 w-64 bg-surface rounded-lg border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-body-md text-on-surface placeholder:text-outline outline-none" placeholder="Search projects..." type="text"/>
+</div>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all shadow-sm">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant overflow-hidden cursor-pointer shadow-sm hover:ring-2 hover:ring-primary/30 transition-all">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a young adult looking optimistic, set against a clean, light mode corporate background with soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9vMaKlSl3wuIxCRcUnyKmcBNR2S_EZ72frDgdDoNg1wiBOLbgOLCLNsJXVLsD8wVudl5iCcljbBzcuwkhzWc1ToIJlEC7gPp5NJF3mJxLKKy6-rmdvgV-EEFkh-Qufaf6sVWFlMsGaddxPFEOEIUdiMyoYVODrP63alrM0ILPh1GWsAeeVZzbOejY_z-Fh2wH_vY8K07e5pvTfXBdfb4nGXc4cd4e5ilUSMFSMWvv6nBId_a8fruT"/>
+</div>
+</div>
+</section>
+<!-- Search & Filters (Mobile) / Just Filters (Desktop) -->
+<section class="space-y-4">
+<div class="md:hidden relative group mb-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-10 pr-4 py-3 w-full bg-surface rounded-lg border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-body-md text-on-surface placeholder:text-outline outline-none" placeholder="Search projects..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm">All</button>
+<button class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md">AI/ML</button>
+<button class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md">Data Science</button>
+<button class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md">Web Development</button>
+<button class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md">Cybersecurity</button>
+<button class="px-4 py-1.5 rounded-full bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md text-label-md">Cloud</button>
+</div>
+</section>
+<!-- Featured Project Card -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">star</span>
+                    Top Recommendation
+                </h3>
+<div class="bg-surface rounded-xl border border-outline-variant shadow-ambient p-unit-lg md:p-8 flex flex-col lg:flex-row gap-8 relative overflow-hidden group">
+<!-- Subtle decorative background element -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container/5 rounded-full blur-3xl group-hover:bg-primary-container/10 transition-all duration-500 pointer-events-none"></div>
+<div class="flex-1 space-y-6 z-10">
+<div class="flex flex-wrap gap-3 mb-2">
+<span class="glass-badge text-primary font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> High Career Value
+                            </span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant/50">
+                                Python
+                            </span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant/50">
+                                FastAPI
+                            </span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant/50">
+                                Docker
+                            </span>
+</div>
+<div>
+<h4 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-3">Real-Time ML Prediction API</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+                                Build and deploy a machine learning prediction service using FastAPI and Docker. This project bridges the gap between model creation and production deployment, a critical skill often missing in junior profiles.
+                            </p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4 border-y border-outline-variant/30">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1 uppercase tracking-wider">Difficulty</p>
+<p class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">signal_cellular_alt</span>
+                                    Intermediate
+                                </p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1 uppercase tracking-wider">Duration</p>
+<p class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+                                    2 weeks
+                                </p>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<p class="font-label-sm text-label-sm text-outline mb-1 uppercase tracking-wider">Focus Area</p>
+<p class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">cloud_upload</span>
+                                    Deployment
+                                </p>
+</div>
+</div>
+<!-- AI Rationale Box -->
+<div class="bg-surface-container-low border border-primary/20 rounded-lg p-4 flex gap-4 items-start">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface mb-1">Why recommended?</p>
+<p class="font-body-md text-label-sm text-on-surface-variant">Your ML fundamentals are strong, but your profile needs deployment experience to align with Senior Data Scientist roles.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-end gap-3 lg:min-w-[200px] z-10">
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-3 px-6 rounded-lg hover:scale-[0.98] transition-transform shadow-sm flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_task</span> Add to Roadmap
+                        </button>
+<button class="w-full bg-surface border border-outline-variant text-on-surface font-label-md text-label-md py-3 px-6 rounded-lg hover:bg-surface-container transition-colors shadow-sm flex justify-center items-center gap-2">
+                             View Details
+                        </button>
+</div>
+</div>
+</section>
+<!-- Project Grid -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Explore Projects</h3>
+<div class="bento-grid">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full shadow-ambient-hover transition-all duration-300 cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">group_remove</span>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-[11px] px-2 py-1 rounded-md border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">trending_up</span> High Value
+                            </span>
+</div>
+<h4 class="font-label-md text-[18px] text-on-surface mb-2 group-hover:text-primary transition-colors">Customer Churn Prediction</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant mb-4 flex-1">
+                            Analyze user behavior data to predict and prevent customer churn using XGBoost.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">Python</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">XGBoost</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">Pandas</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30 text-outline">
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span> Beginner
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 7 days
+                            </div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full shadow-ambient-hover transition-all duration-300 cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">security</span>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-[11px] px-2 py-1 rounded-md border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">trending_up</span> High Value
+                            </span>
+</div>
+<h4 class="font-label-md text-[18px] text-on-surface mb-2 group-hover:text-primary transition-colors">Fraud Detection System</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant mb-4 flex-1">
+                            Identify fraudulent transactions in real-time using anomaly detection algorithms.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">Scikit-Learn</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">SQL</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30 text-outline">
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span> Intermediate
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 14 days
+                            </div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full shadow-ambient-hover transition-all duration-300 cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">document_scanner</span>
+</div>
+<span class="text-outline font-label-sm text-[11px] px-2 py-1 rounded-md border border-outline-variant/30">
+                                Med Value
+                            </span>
+</div>
+<h4 class="font-label-md text-[18px] text-on-surface mb-2 group-hover:text-primary transition-colors">AI Resume Analyzer</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant mb-4 flex-1">
+                            Extract keywords and score resumes against job descriptions using NLP techniques.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">NLP</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">SpaCy</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">React</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30 text-outline">
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span> Intermediate
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 10 days
+                            </div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full shadow-ambient-hover transition-all duration-300 cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-[11px] px-2 py-1 rounded-md border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">trending_up</span> High Value
+                            </span>
+</div>
+<h4 class="font-label-md text-[18px] text-on-surface mb-2 group-hover:text-primary transition-colors">Recommendation Engine</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant mb-4 flex-1">
+                            Build a collaborative filtering system to recommend products to e-commerce users.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">PyTorch</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">AWS</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30 text-outline">
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span> Advanced
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 21 days
+                            </div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full shadow-ambient-hover transition-all duration-300 cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<span class="text-outline font-label-sm text-[11px] px-2 py-1 rounded-md border border-outline-variant/30">
+                                Med Value
+                            </span>
+</div>
+<h4 class="font-label-md text-[18px] text-on-surface mb-2 group-hover:text-primary transition-colors">Computer Vision API</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant mb-4 flex-1">
+                            Deploy a service that classifies image content and detects objects via REST endpoints.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">OpenCV</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">TensorFlow</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30 text-outline">
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span> Intermediate
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 14 days
+                            </div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full shadow-ambient-hover transition-all duration-300 cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">router</span>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-[11px] px-2 py-1 rounded-md border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">trending_up</span> High Value
+                            </span>
+</div>
+<h4 class="font-label-md text-[18px] text-on-surface mb-2 group-hover:text-primary transition-colors">Network Intrusion Detection</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant mb-4 flex-1">
+                            Create a system to monitor network traffic and flag suspicious activity patterns.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">Cybersecurity</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">Python</span>
+<span class="text-[11px] font-label-sm text-outline border border-outline-variant/50 px-2 py-1 rounded-full">Splunk</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30 text-outline">
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span> Advanced
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 30 days
+                            </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

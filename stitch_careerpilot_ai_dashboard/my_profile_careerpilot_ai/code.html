@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Profile - CareerPilot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d3daef",
+                        "surface-variant": "#dce2f7",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-secondary-fixed": "#07006c",
+                        "surface-tint": "#4d44e3",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e1e8fd",
+                        "on-surface-variant": "#464555",
+                        "tertiary-container": "#a44100",
+                        "surface-container": "#e9edff",
+                        "outline": "#777587",
+                        "surface-container-highest": "#dce2f7",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "secondary-container": "#6063ee",
+                        "on-surface": "#141b2b",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary": "#7e3000",
+                        "on-background": "#141b2b",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "secondary": "#4648d4",
+                        "on-tertiary-container": "#ffd2be",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "inverse-primary": "#c3c0ff",
+                        "surface": "#f9f9ff",
+                        "primary": "#3525cd",
+                        "secondary-fixed": "#e1e0ff",
+                        "on-tertiary-fixed": "#351000",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-low": "#f1f3ff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "primary-fixed": "#e2dfff",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#293040",
+                        "primary-container": "#4f46e5",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c7c4d8",
+                        "background": "#f9f9ff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1.5rem"
+                    },
+                    "spacing": {
+                        "unit-md": "16px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px",
+                        "unit-lg": "24px",
+                        "margin-mobile": "16px",
+                        "unit-sm": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.06);
+        }
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px -10px rgba(79, 70, 229, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar (Predicted JSON) -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest dark:bg-surface-container-low border-r border-outline-variant flex flex-col py-unit-lg px-unit-md gap-unit-sm z-20 hidden md:flex shrink-0">
+<div class="mb-unit-lg px-unit-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-xl">
+                C
+            </div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">CareerPilot AI</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">AI Career Mentor</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary rounded-lg py-3 px-4 font-label-md text-label-md mb-6 hover:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span>
+            New Career Goal
+        </button>
+<div class="flex-1 overflow-y-auto space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Active Tab: My Profile -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary dark:text-primary-fixed-dim font-bold bg-primary-container/10 scale-[0.98] transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+                My Profile
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">psychology</span>
+                Skills
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">description</span>
+                Resume Intelligence
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Skill Gap
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">route</span>
+                Career Roadmap
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+                Projects
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">forum</span>
+                Mock Interview
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+                Progress
+            </a>
+</div>
+<div class="mt-auto space-y-1 pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container-high transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-error hover:bg-error-container transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 h-full relative">
+<!-- Animated Background Element (Subtle, professional) -->
+<div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: radial-gradient(circle at 100% 0%, #e1e8fd 0%, transparent 40%), radial-gradient(circle at 0% 100%, #e9edff 0%, transparent 30%);"></div>
+<!-- TopNavBar (Predicted JSON Style) -->
+<header class="w-full h-16 bg-surface dark:bg-surface-dim shadow-sm flex justify-between items-center px-margin-desktop border-b border-outline-variant z-10 sticky top-0">
+<div class="flex-1 flex items-center max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-4 py-2 font-label-md text-label-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="Search anything..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-unit-md ml-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a young male software engineer with short dark hair, wearing a casual navy blue button-down shirt. The lighting is bright and modern, suggesting a well-lit tech office environment. The background is slightly blurred with light cool tones to emphasize the subject's face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdEpZKrZdqUmgK9nm9Q13lUY6EneFdY9iotQ7IqjC7NoInhbhJrbwEXr6iRTftkZekOP_a7ssQTMIizJUFlEyBWTgEWqnYbZweP5dVlfX0zC1v5G1C-wPacxc1bQAObHxzRIF4qaumduQMXvweoUAJhQhYY_wH2BiN0a3YrkNGC4RDDmafP4a1DSnZk91zggj1JfyOUtYA04FEbJrVuVlUyGxhieTPd5Mu94twl1NCq88kZ-n9do_O"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop pb-24 z-0">
+<div class="max-w-container-max mx-auto space-y-unit-lg">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">My Profile</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage your career profile and goals.</p>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-lg hover:scale-[0.98] transition-transform flex items-center gap-2 w-fit" onclick="document.getElementById('edit-profile-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-sm">edit</span>
+                        Edit Profile
+                    </button>
+</div>
+<!-- Profile Header Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow flex flex-col md:flex-row items-center md:items-start gap-unit-lg">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-surface shrink-0 shadow-sm">
+<img alt="Alex Sharma Profile" class="w-full h-full object-cover" data-alt="A highly detailed professional portrait of a young male software developer named Alex Sharma. He has short neat dark hair, a friendly expression, and is wearing a crisp light blue shirt. The lighting is high-key and studio quality with a soft white background, ensuring a clean, trustworthy, and premium corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAak26znKGcGeluqDzzXGbWPVBynbZQ-pTFvdNWBwdPnlJ-Eu0HAovBYtv83FgrHxOAFXONwtTwNgpT5W07BWGtbM75dDJbbXUGq9C9TCr4YIcKGyZiRS6sqrOuKpe719akXaOQ5iKIWSzb-qay57MczLcw-1VaXEWvnEgkVS2AO3pLkDpBCQnk3TqFJTNQgJlVXycocuI__5v97FESKL3eTc5dQ0X1zJg75zwFfVl1Ha9qmreYax7C"/>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h3 class="font-headline-md text-headline-md text-on-surface">Alex Sharma</h3>
+<p class="font-body-lg text-body-lg text-primary mt-1 font-medium">Machine Learning Engineer</p>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-4 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Chhatrapati Sambhajinagar, Maharashtra</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">school</span>
+<span>B.Tech in Artificial Intelligence &amp; Data Science (Class of 2027)</span>
+</div>
+</div>
+<div class="flex items-center justify-center md:justify-start gap-3 mt-6">
+<a aria-label="GitHub" class="p-2 bg-surface-container text-on-surface rounded-lg hover:bg-surface-variant transition-colors flex items-center justify-center" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="LinkedIn" class="p-2 bg-surface-container text-on-surface rounded-lg hover:bg-surface-variant transition-colors flex items-center justify-center" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="Portfolio" class="p-2 bg-surface-container text-on-surface rounded-lg hover:bg-surface-variant transition-colors flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-[20px]">language</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Two-Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-unit-lg">
+<!-- Left Column (Span 2) -->
+<div class="lg:col-span-2 space-y-unit-lg">
+<!-- About Me -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow hover-lift">
+<h4 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">person_book</span>
+                                About Me
+                            </h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                AI &amp; Data Science student passionate about machine learning, software development and building practical AI applications. I enjoy solving complex problems and am constantly learning new technologies to bridge the gap between theoretical models and real-world utility.
+                            </p>
+</div>
+<!-- Career Goal & Education Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-lg">
+<!-- Career Goal -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow hover-lift">
+<h4 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 mb-4 text-[20px]">
+<span class="material-symbols-outlined text-primary">target</span>
+                                    Career Goal
+                                </h4>
+<div class="space-y-3 font-label-md text-label-md text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span>Target Role:</span>
+<span class="text-on-surface font-semibold text-right">Machine Learning Engineer</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span>Level:</span>
+<span class="text-on-surface font-semibold">Fresher</span>
+</div>
+<div class="flex justify-between">
+<span>Industry:</span>
+<span class="text-on-surface font-semibold">Technology</span>
+</div>
+</div>
+</div>
+<!-- Education -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow hover-lift">
+<h4 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 mb-4 text-[20px]">
+<span class="material-symbols-outlined text-primary">school</span>
+                                    Education
+                                </h4>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">B.Tech in AI &amp; DS</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Chhatrapati Sambhajinagar</p>
+<div class="mt-2 inline-flex px-2 py-1 bg-surface-container text-on-surface-variant rounded font-label-sm text-label-sm">
+                                            2023–2027
+                                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Span 1) -->
+<div class="lg:col-span-1">
+<!-- Skills Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow h-full flex flex-col hover-lift">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 text-[20px]">
+<span class="material-symbols-outlined text-primary">psychology</span>
+                                    Skills
+                                </h4>
+</div>
+<div class="flex flex-wrap gap-2 mb-6 flex-1 content-start">
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container border border-primary-container/20 rounded-full font-label-md text-label-md">Python</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container border border-primary-container/20 rounded-full font-label-md text-label-md">Machine Learning</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container border border-primary-container/20 rounded-full font-label-md text-label-md">SQL</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container border border-primary-container/20 rounded-full font-label-md text-label-md">Pandas</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container border border-primary-container/20 rounded-full font-label-md text-label-md">NumPy</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container border border-primary-container/20 rounded-full font-label-md text-label-md">TensorFlow</span>
+<span class="px-3 py-1.5 bg-surface-container text-on-surface-variant border border-outline-variant rounded-full font-label-md text-label-md">JavaScript</span>
+<span class="px-3 py-1.5 bg-surface-container text-on-surface-variant border border-outline-variant rounded-full font-label-md text-label-md">Git</span>
+<span class="px-3 py-1.5 bg-surface-container text-on-surface-variant border border-outline-variant rounded-full font-label-md text-label-md">GitHub</span>
+</div>
+<button class="w-full py-2 bg-surface text-on-surface border border-outline-variant rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center justify-center gap-2 group mt-auto">
+                                Manage Skills
+                                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Projects Section -->
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">folder_special</span>
+                        Projects
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-unit-lg">
+<!-- Project 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow hover-lift flex flex-col group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-surface-tint opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h5 class="font-headline-md text-headline-md text-[18px] text-on-surface mb-2 font-bold group-hover:text-primary transition-colors">Customer Churn Prediction</h5>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-1">
+                                Developed an end-to-end machine learning pipeline to predict customer churn in the telecom sector, improving retention strategies by identifying key risk factors.
+                            </p>
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">Python</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">Scikit-Learn</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">Pandas</span>
+</div>
+<div class="flex justify-end gap-2 border-t border-outline-variant pt-3">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="View Source">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="Live Demo">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow hover-lift flex flex-col group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-surface-tint opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h5 class="font-headline-md text-headline-md text-[18px] text-on-surface mb-2 font-bold group-hover:text-primary transition-colors">Movie Recommendation System</h5>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-1">
+                                Built a content-based filtering recommendation engine utilizing natural language processing techniques to suggest similar movies based on user preferences.
+                            </p>
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">Python</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">NLTK</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">Streamlit</span>
+</div>
+<div class="flex justify-end gap-2 border-t border-outline-variant pt-3">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="View Source">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="Live Demo">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-unit-lg ambient-shadow hover-lift flex flex-col group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-surface-tint opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h5 class="font-headline-md text-headline-md text-[18px] text-on-surface mb-2 font-bold group-hover:text-primary transition-colors">Portfolio Website</h5>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-1">
+                                Designed and developed a personal portfolio website to showcase projects, skills, and resume using modern web technologies and responsive design principles.
+                            </p>
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">HTML/CSS</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">JavaScript</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-semibold uppercase tracking-wide">Tailwind</span>
+</div>
+<div class="flex justify-end gap-2 border-t border-outline-variant pt-3">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="View Source">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary-container/10 rounded transition-colors" title="Live Demo">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Edit Profile Modal -->
+<div class="fixed inset-0 z-50 hidden" id="edit-profile-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" onclick="document.getElementById('edit-profile-modal').classList.add('hidden')"></div>
+<!-- Modal Content -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant overflow-hidden flex flex-col max-h-[90vh]">
+<div class="px-6 py-4 border-b border-outline-variant flex justify-between items-center bg-surface">
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Edit Profile</h3>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors" onclick="document.getElementById('edit-profile-modal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 overflow-y-auto space-y-6 flex-1 custom-scrollbar">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1 md:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide ml-1">Full Name</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" type="text" value="Alex Sharma"/>
+</div>
+<div class="space-y-1 md:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide ml-1">Target Role</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" type="text" value="Machine Learning Engineer"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide ml-1">College/University</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" type="text" value="Chhatrapati Sambhajinagar"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide ml-1">Degree</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none appearance-none">
+<option selected="" value="btech">B.Tech</option>
+<option value="be">B.E.</option>
+<option value="bsc">B.Sc.</option>
+<option value="mtech">M.Tech</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide ml-1">Branch</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" type="text" value="Artificial Intelligence &amp; Data Science"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide ml-1">Graduation Year</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" type="number" value="2027"/>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide mb-3 ml-1">Social Links</h4>
+<div class="space-y-3">
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="w-5 h-5 text-outline" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</div>
+<input class="w-full bg-surface border border-outline-variant rounded-lg pl-10 pr-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="GitHub URL" type="url"/>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="w-5 h-5 text-outline" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+</div>
+<input class="w-full bg-surface border border-outline-variant rounded-lg pl-10 pr-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="LinkedIn URL" type="url"/>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[20px] text-outline">language</span>
+</div>
+<input class="w-full bg-surface border border-outline-variant rounded-lg pl-10 pr-4 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="Portfolio URL" type="url"/>
+</div>
+</div>
+</div>
+</div>
+<div class="px-6 py-4 border-t border-outline-variant bg-surface flex justify-end gap-3">
+<button class="px-5 py-2.5 bg-surface text-on-surface-variant border border-outline-variant rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors" onclick="document.getElementById('edit-profile-modal').classList.add('hidden')">
+                    Cancel
+                </button>
+<button class="px-6 py-2.5 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md hover:scale-[0.98] transition-transform shadow-sm" onclick="document.getElementById('edit-profile-modal').classList.add('hidden')">
+                    Save Changes
+                </button>
+</div>
+</div>
+</div>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #dce2f7;
+            border-radius: 20px;
+        }
+    </style>
+</body></html>

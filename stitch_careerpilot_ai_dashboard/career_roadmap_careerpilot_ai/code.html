@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Roadmap - CareerPilot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#141b2b",
+                      "secondary": "#4648d4",
+                      "on-surface-variant": "#464555",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "surface-tint": "#4d44e3",
+                      "on-tertiary-fixed": "#351000",
+                      "surface-container": "#e9edff",
+                      "on-background": "#141b2b",
+                      "on-secondary": "#ffffff",
+                      "outline": "#777587",
+                      "on-tertiary-container": "#ffd2be",
+                      "tertiary-fixed": "#ffdbcc",
+                      "secondary-container": "#6063ee",
+                      "secondary-fixed": "#e1e0ff",
+                      "on-secondary-fixed-variant": "#2f2ebe",
+                      "surface-container-high": "#e1e8fd",
+                      "on-primary-container": "#dad7ff",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#293040",
+                      "surface-container-highest": "#dce2f7",
+                      "surface": "#f9f9ff",
+                      "secondary-fixed-dim": "#c0c1ff",
+                      "on-primary-fixed": "#0f0069",
+                      "surface-dim": "#d3daef",
+                      "tertiary-container": "#a44100",
+                      "tertiary": "#7e3000",
+                      "background": "#f9f9ff",
+                      "surface-bright": "#f9f9ff",
+                      "on-secondary-fixed": "#07006c",
+                      "inverse-primary": "#c3c0ff",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f1f3ff",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-secondary-container": "#fffbff",
+                      "surface-variant": "#dce2f7",
+                      "outline-variant": "#c7c4d8",
+                      "on-tertiary-fixed-variant": "#7b2f00",
+                      "primary": "#3525cd",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb695",
+                      "primary-container": "#4f46e5",
+                      "primary-fixed": "#e2dfff",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "unit-lg": "24px",
+                      "unit-sm": "8px",
+                      "gutter": "24px",
+                      "unit-xs": "4px",
+                      "container-max": "1280px",
+                      "unit-xl": "48px",
+                      "unit-md": "16px",
+                      "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                      "body-md": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "label-md": ["Geist"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+        
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+            100% {
+                transform: scale(0.8);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex flex-col p-unit-md gap-unit-sm h-screen w-72 rounded-r-xl bg-surface dark:bg-on-surface shadow-lg border-r border-outline-variant/30 sticky top-0 shrink-0">
+<div class="mb-8">
+<h1 class="font-headline-md text-headline-md text-primary font-bold px-4">CareerPilot AI</h1>
+</div>
+<!-- Profile Header -->
+<div class="flex items-center gap-4 p-4 mb-6 rounded-xl bg-surface-container-low">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A professional headshot of a young computer science student, well-lit with a bright, optimistic modern corporate aesthetic, wearing casual but smart attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUG3L-mQMF9g5QKnKDMFhBTTVit2wjOLSY3NZqyt6DQ7yvt1f-xsT803Is4HOjBytfOz8oJo-dbkhQCQWGyEklLlImhwvHLW2_EU8Qa0X9N9aTm4IYVkU9dh6QkF4U-tl4mVNxibQYfgztSMKXcLiQG_g-oMGjmYLm2Wh5vDXUdj3_51BGDJ9D-prRhC9iquBYde4c8fbFA25ZGXRsGSeUAAN3DuuE7MhnIf2DqLdiFoHQrLMaSyE8"/>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Alex Rivers</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Computer Science Senior</p>
+<p class="text-[10px] uppercase font-bold text-primary mt-1">Premium Member</p>
+</div>
+</div>
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-xl font-bold transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="route" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-label-md text-label-md">Roadmap</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-md text-label-md">AI Mentor</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="font-label-md text-label-md">Opportunities</span>
+</a>
+</li>
+<li class="mt-auto pt-4 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- TopAppBar (Mobile & Desktop Content Header) -->
+<div class="flex-1 flex flex-col min-w-0">
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-unit-md w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md fixed top-0 z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="route">route</span>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">CareerPilot AI</span>
+</div>
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="A professional headshot of a young computer science student, well-lit with a bright, optimistic modern corporate aesthetic, wearing casual but smart attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqdCivKadkzJ865HxDJCTQrGgwA9fD_A8VfaWNpM_HeeUXa7dc5dxfN0lnl0Hs_NxoZK0WsOlXY8smaaRhKIOl5SUmQPBd3GT1OWkHrzmA-IvESQlj08SqqPcdeiMdHpAmtAAW48D70yglaC6Qy2ruKb-D2sbYsA639W-6x433DOSFYQCDtfnRAr3f7AcHkgYLbb-8M3Pxpv5nuuEipybcth4J59rU0zLVfrY_hmp_u1LgH5fqbz9T"/>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop mt-[72px] md:mt-0 max-w-container-max mx-auto w-full pb-32 md:pb-margin-desktop">
+<div class="mb-unit-lg">
+<h1 class="font-display text-display text-on-surface mb-2">Your Career Roadmap</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your personalized path to becoming a Machine Learning Engineer.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left Column: Progress & Timeline -->
+<div class="lg:col-span-2 flex flex-col gap-unit-lg">
+<!-- Progress Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-unit-lg border border-outline-variant/30 shadow-[0_8px_30px_rgb(79,70,229,0.05)] hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Overall Progress</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Machine Learning Track</p>
+</div>
+<div class="text-right">
+<span class="font-display text-4xl text-primary font-bold">42%</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-4 bg-surface-container rounded-full mb-6 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 42%;"></div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant/20 pt-4">
+<div class="text-center">
+<span class="block font-headline-md text-headline-md text-on-surface">8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Completed</span>
+</div>
+<div class="text-center border-l border-outline-variant/20">
+<span class="block font-headline-md text-headline-md text-primary">2</span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">In Progress</span>
+</div>
+<div class="text-center border-l border-outline-variant/20">
+<span class="block font-headline-md text-headline-md text-on-surface-variant">11</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Remaining</span>
+</div>
+</div>
+</div>
+<!-- Timeline -->
+<div class="bg-surface-container-lowest rounded-[24px] p-unit-lg border border-outline-variant/30 shadow-[0_8px_30px_rgb(79,70,229,0.05)]">
+<h3 class="font-headline-lg text-headline-lg mb-8 text-on-surface">Milestones</h3>
+<div class="relative pl-8">
+<!-- Vertical Line connecting nodes -->
+<div class="absolute left-[15px] top-4 bottom-8 w-0.5 bg-surface-container"></div>
+<!-- Week 1: Completed -->
+<div class="relative mb-12">
+<div class="absolute -left-[35px] top-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10 shadow-sm">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="opacity-70">
+<span class="font-label-md text-label-md text-primary mb-1 block">Week 1</span>
+<h4 class="font-headline-md text-headline-md text-on-surface line-through">Advanced Python</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Duration: 5 days</p>
+<div class="flex gap-2 mt-3">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">Python</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">OOP</span>
+</div>
+</div>
+</div>
+<!-- Week 2: Completed -->
+<div class="relative mb-12">
+<div class="absolute -left-[35px] top-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10 shadow-sm">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="opacity-70">
+<span class="font-label-md text-label-md text-primary mb-1 block">Week 2</span>
+<h4 class="font-headline-md text-headline-md text-on-surface line-through">Advanced SQL</h4>
+<div class="flex gap-2 mt-3">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">SQL</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">Data Analysis</span>
+</div>
+</div>
+</div>
+<!-- Week 3: In Progress (Active) -->
+<div class="relative mb-12 bg-surface-container-low -ml-6 pl-6 -mr-6 pr-6 py-6 rounded-2xl border border-primary/20 shadow-sm">
+<div class="absolute -left-[11px] top-7 w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10 pulse-ring">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+<div>
+<span class="font-label-md text-label-md text-primary font-bold mb-1 block uppercase tracking-wider">Week 3 • Current</span>
+<h4 class="font-headline-lg text-headline-lg text-on-surface">Machine Learning</h4>
+<div class="flex flex-wrap gap-2 mt-4 mb-6">
+<span class="px-3 py-1 bg-primary-container/10 text-primary rounded-full font-label-sm text-label-sm border border-primary/20">Scikit-learn</span>
+<span class="px-3 py-1 bg-primary-container/10 text-primary rounded-full font-label-sm text-label-sm border border-primary/20">Model Evaluation</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:scale-95 transition-transform duration-150 shadow-md">
+                                        Continue →
+                                    </button>
+</div>
+</div>
+<!-- Week 4: Upcoming -->
+<div class="relative mb-12">
+<div class="absolute -left-[35px] top-1 w-8 h-8 bg-surface border-2 border-outline-variant rounded-full flex items-center justify-center z-10">
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">Week 4</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">FastAPI</h4>
+<div class="flex gap-2 mt-3">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">REST API</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">Python</span>
+</div>
+</div>
+</div>
+<!-- Week 5: Upcoming -->
+<div class="relative mb-12">
+<div class="absolute -left-[35px] top-1 w-8 h-8 bg-surface border-2 border-outline-variant rounded-full flex items-center justify-center z-10">
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">Week 5</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Docker</h4>
+<div class="flex gap-2 mt-3">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">Docker</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm">Deployment</span>
+</div>
+</div>
+</div>
+<!-- Week 6: Upcoming -->
+<div class="relative mb-12">
+<div class="absolute -left-[35px] top-1 w-8 h-8 bg-surface border-2 border-outline-variant rounded-full flex items-center justify-center z-10">
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">Week 6</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Build ML Project</h4>
+</div>
+</div>
+<!-- Week 7: Upcoming -->
+<div class="relative mb-12">
+<div class="absolute -left-[35px] top-1 w-8 h-8 bg-surface border-2 border-outline-variant rounded-full flex items-center justify-center z-10">
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">Week 7</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Deploy Project</h4>
+</div>
+</div>
+<!-- Week 8: Upcoming -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-8 h-8 bg-surface border-2 border-outline-variant rounded-full flex items-center justify-center z-10">
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">Week 8</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Interview Preparation</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Coach -->
+<div class="lg:col-span-1">
+<div class="sticky top-unit-xl">
+<!-- AI Career Coach Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-unit-lg border border-primary/20 shadow-[0_8px_30px_rgb(79,70,229,0.08)] relative overflow-hidden">
+<!-- Subtle decorative gradient -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">AI Career Coach</h3>
+</div>
+<div class="bg-surface-container p-4 rounded-xl mb-6 border border-outline-variant/10">
+<p class="font-body-md text-body-md text-on-surface">
+                                    "Based on your current progress, focus on <span class="font-bold text-primary">FastAPI</span> next. Building a solid understanding of REST APIs will be crucial for deploying your Machine Learning models later."
+                                </p>
+</div>
+<button class="w-full bg-surface-container-lowest text-on-surface border border-outline-variant hover:border-primary hover:text-primary px-4 py-3 rounded-lg font-label-md text-label-md transition-colors flex justify-center items-center gap-2">
+                                Start Next Task 
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-unit-md pt-unit-sm bg-surface/90 dark:bg-on-surface/90 backdrop-blur-xl rounded-t-xl z-50 shadow-[0_-4px_20px_0_rgba(70,72,212,0.06)] border-t border-outline-variant/20">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant active:bg-surface-container-highest scale-98 transition-transform duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:bg-surface-container-highest scale-98 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="ads_click" style="font-variation-settings: 'FILL' 1;">ads_click</span>
+<span class="font-label-sm text-label-sm mt-1">Roadmap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant active:bg-surface-container-highest scale-98 transition-transform duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant active:bg-surface-container-highest scale-98 transition-transform duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="business_center">business_center</span>
+<span class="font-label-sm text-label-sm mt-1">Jobs</span>
+</a>
+</nav>
+</body></html>

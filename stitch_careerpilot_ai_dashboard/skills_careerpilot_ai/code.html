@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills - CareerPilot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+                    "secondary-fixed": "#e1e0ff",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "surface-container-highest": "#dce2f7",
+                    "surface-container-high": "#e1e8fd",
+                    "primary": "#3525cd",
+                    "surface-dim": "#d3daef",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "primary-container": "#4f46e5",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#ffd2be",
+                    "inverse-primary": "#c3c0ff",
+                    "on-secondary-fixed": "#07006c",
+                    "on-background": "#141b2b",
+                    "tertiary": "#7e3000",
+                    "outline-variant": "#c7c4d8",
+                    "tertiary-fixed": "#ffdbcc",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-primary-container": "#dad7ff",
+                    "on-secondary-container": "#fffbff",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#4d44e3",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#777587",
+                    "secondary-container": "#6063ee",
+                    "surface-container": "#e9edff",
+                    "on-surface-variant": "#464555",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "primary-fixed": "#e2dfff",
+                    "on-surface": "#141b2b",
+                    "tertiary-container": "#a44100",
+                    "surface": "#f9f9ff",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "surface-container-low": "#f1f3ff",
+                    "on-tertiary-fixed": "#351000",
+                    "on-error": "#ffffff",
+                    "background": "#f9f9ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "surface-variant": "#dce2f7",
+                    "on-error-container": "#93000a",
+                    "secondary": "#4648d4",
+                    "on-primary-fixed": "#0f0069",
+                    "inverse-surface": "#293040",
+                    "on-tertiary": "#ffffff"
+            },
+            borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "2xl": "1.5rem"
+            },
+            spacing: {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit-sm": "8px",
+                    "margin-desktop": "48px",
+                    "unit-xl": "48px",
+                    "unit-lg": "24px",
+                    "margin-mobile": "16px",
+                    "unit-md": "16px",
+                    "unit-xs": "4px"
+            },
+            fontFamily: {
+                    "label-md": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-lg": ["Geist"]
+            },
+            fontSize: {
+                    "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "display": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+            },
+            boxShadow: {
+              'ambient': '0 4px 20px -2px rgba(79, 70, 229, 0.05)',
+              'ambient-hover': '0 8px 30px -4px rgba(79, 70, 229, 0.08)'
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen">
+<!-- Top App Bar (Desktop & Tablet) -->
+<header class="hidden md:flex fixed top-0 left-0 w-full z-50 justify-between items-center px-margin-desktop h-16 bg-surface shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">menu</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">CareerPilot AI</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant flex items-center justify-center">
+<img alt="Alex Sharma" class="object-cover w-full h-full" data-alt="A professional headshot of a young professional, warm lighting, soft background, minimal aesthetic, corporate yet approachable. The image should feel trustworthy and confident." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs_pBz5vrav0mVBc7OzaU4j2TwI7hHaKglRfk45GQpSCIBBhaGp685ZXHRcuZTe1tn57-yBSvCxx1ldoTIap3h-TqvssncqgtnVkw0rXb7hl9BhPMr0n9Yu-FfSIW1mGTW9o3jRxyYKNZoqRVfoCOkFtOZssbDe0YZootC0616K0PMzPWCK8ReHnzU0O3nkKiOq2YE0xNYTeuVPwya4sAoAn8Qn_JOsYhGqpkWAh9TmCyZCIb05A1G"/>
+</div>
+</div>
+</header>
+<!-- Top App Bar (Mobile) -->
+<header class="md:hidden fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-16 bg-surface shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+<span class="text-headline-md-mobile font-headline-md font-bold text-primary">CareerPilot AI</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant flex items-center justify-center">
+<img alt="Alex Sharma" class="object-cover w-full h-full" data-alt="A professional headshot of a young professional, warm lighting, soft background, minimal aesthetic, corporate yet approachable. The image should feel trustworthy and confident." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgM8WPdSk0foWkpoDgXbRvqGVPXR8aRoCVOx13j5BtR7niUy_ypSOzenZ0ZiZENFbY5aMHlol3NVbYMiJzCFtlMHlqrKDhTvb6Pl0rFgdlxWj4QsFs0DCnf3zqzzh2QX3T283Be8h4BJ2UvdQ8qZJYvh4J_7FW0rS284xIx4zXQHaFRl7U_ladNv8anDQ3DeJOsQjqHdDhOKnghvXlmfC6L34QtUAioCwyKkyHjyiozHg5HV066Gle"/>
+</div>
+</header>
+<!-- Side Navigation (Desktop) -->
+<aside class="hidden md:flex fixed inset-y-0 left-0 z-[40] flex-col w-72 rounded-r-xl bg-surface shadow-xl p-unit-md overflow-y-auto mt-16 pt-unit-md">
+<!-- Nav Items -->
+<nav class="flex flex-col gap-1 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">My Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-bold scale-[0.99] transition-transform" href="#">
+<span class="material-symbols-outlined filled-icon">bolt</span>
+<span class="font-label-md text-label-md">Skills</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md">Resume Intelligence</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-label-md text-label-md">Skill Gap</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-md text-label-md">Career Roadmap</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">question_answer</span>
+<span class="font-label-md text-label-md">Mock Interview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-label-md text-label-md">Progress</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-20 md:pt-24 pb-24 md:pb-12 md:ml-72 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto transition-all">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-unit-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Your Skills</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Track your technical skills and identify what to learn next.</p>
+</div>
+<button class="bg-primary hover:bg-primary-fixed-dim text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all shadow-sm active:scale-95 w-full md:w-auto shrink-0">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add Skill
+            </button>
+</div>
+<!-- Top Section Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-unit-lg">
+<!-- Target Role Card -->
+<div class="bg-surface rounded-2xl border border-surface-variant p-unit-lg shadow-ambient col-span-1 lg:col-span-2 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined filled-icon">target</span>
+</div>
+<div>
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Target Role</h2>
+<p class="font-headline-md text-headline-md text-on-surface">Machine Learning Engineer</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Your skills are compared against the requirements of your target role.</p>
+</div>
+<!-- Overall Skill Strength -->
+<div class="bg-surface rounded-2xl border border-surface-variant p-unit-lg shadow-ambient col-span-1 flex flex-col items-center justify-center text-center">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4">Overall Skill Strength</h3>
+<!-- Circular Progress (CSS based) -->
+<div class="relative w-32 h-32 flex items-center justify-center mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle class="text-surface-container-high" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress Circle -->
+<circle class="text-primary drop-shadow-[0_0_8px_rgba(79,70,229,0.4)]" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-dasharray="282.7" stroke-dashoffset="50.8" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display text-display text-on-surface leading-none">82</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">/100</span>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Insight Card -->
+<div class="mb-unit-lg bg-surface-bright rounded-2xl border border-secondary-fixed-dim p-unit-lg shadow-ambient relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed opacity-30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-container to-secondary-container flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-on-primary filled-icon">auto_awesome</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-primary mb-1">AI Insight</h3>
+<p class="font-body-md text-body-md text-on-surface">Your Python and data science foundation is strong. Focus next on deployment technologies such as Docker and FastAPI.</p>
+</div>
+<button class="bg-surface hover:bg-surface-container-low text-primary border border-primary-fixed px-5 py-2 rounded-lg font-label-md text-label-md transition-colors shrink-0 whitespace-nowrap">
+                    View Skill Gaps →
+                </button>
+</div>
+</div>
+<!-- Skills Section -->
+<div class="mb-unit-lg">
+<!-- Tabs -->
+<div class="flex overflow-x-auto no-scrollbar gap-2 mb-6 border-b border-surface-variant pb-2">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap transition-colors">All</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Programming</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Data Science</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Machine Learning</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Web</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Tools</button>
+</div>
+<!-- Bento Grid for Skills -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Skill Card 1 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#3776AB]/10 text-[#3776AB] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Python</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-primary-fixed text-on-primary-fixed uppercase tracking-wider">Advanced</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">90%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<!-- Skill Card 2 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#4479A1]/10 text-[#4479A1] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">SQL</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-secondary-fixed text-on-secondary-fixed uppercase tracking-wider">Intermediate</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">70%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-80" style="width: 70%"></div>
+</div>
+</div>
+<!-- Skill Card 3 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#FF6F00]/10 text-[#FF6F00] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Machine Learning</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-secondary-fixed text-on-secondary-fixed uppercase tracking-wider">Intermediate</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">80%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-90" style="width: 80%"></div>
+</div>
+</div>
+<!-- Skill Card 4 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#150458]/10 text-[#150458] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">grid_on</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Pandas</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-primary-fixed text-on-primary-fixed uppercase tracking-wider">Advanced</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">85%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<!-- Skill Card 5 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#013243]/10 text-[#013243] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">NumPy</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-primary-fixed text-on-primary-fixed uppercase tracking-wider">Advanced</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">88%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Skill Card 6 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#FF6F00]/10 text-[#FF6F00] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">TensorFlow</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-secondary-fixed text-on-secondary-fixed uppercase tracking-wider">Intermediate</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">60%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-70" style="width: 60%"></div>
+</div>
+</div>
+<!-- Skill Card 7 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#2496ED]/10 text-[#2496ED] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">view_in_ar</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Docker</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-surface-variant text-on-surface-variant uppercase tracking-wider">Beginner</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">35%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-outline h-2 rounded-full opacity-50" style="width: 35%"></div>
+</div>
+</div>
+<!-- Skill Card 8 -->
+<div class="bg-surface rounded-xl border border-surface-variant p-6 shadow-ambient hover:shadow-ambient-hover hover:-translate-y-1 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#009688]/10 text-[#009688] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">api</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">FastAPI</h4>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-label-sm bg-surface-variant text-on-surface-variant uppercase tracking-wider">Beginner</span>
+</div>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Proficiency</span>
+<span class="font-label-md text-label-md text-on-surface">40%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-outline h-2 rounded-full opacity-50" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface-container-lowest shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high w-16 py-1 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">dashboard</span>
+<span class="font-label-sm text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-98 transition-all" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px] filled-icon">psychology</span>
+<span class="font-label-sm text-[10px]">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high w-16 py-1 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">alt_route</span>
+<span class="font-label-sm text-[10px]">Roadmap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high w-16 py-1 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">forum</span>
+<span class="font-label-sm text-[10px]">Mock</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high w-16 py-1 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">analytics</span>
+<span class="font-label-sm text-[10px]">Progress</span>
+</a>
+</nav>
+<!-- Modal Overlay (Hidden by default, inline styles for demonstration) -->
+<div class="fixed inset-0 z-[100] bg-on-background/40 backdrop-blur-sm hidden items-center justify-center p-4" id="addSkillModal">
+<div class="bg-surface w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<div class="px-6 py-4 border-b border-surface-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Add New Skill</h3>
+<button class="text-on-surface-variant hover:text-on-surface bg-transparent hover:bg-surface-container p-1 rounded-full transition-colors" onclick="document.getElementById('addSkillModal').style.display='none'">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-5">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Skill Name</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-2 text-on-surface focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all font-body-md text-body-md" placeholder="e.g. React, AWS" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Category</label>
+<div class="relative">
+<select class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-2 text-on-surface appearance-none focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all font-body-md text-body-md">
+<option>Programming</option>
+<option>Data Science</option>
+<option>Machine Learning</option>
+<option>Web</option>
+<option>Tools</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Proficiency Level</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="level" type="radio" value="beginner"/>
+<div class="text-center px-2 py-2 rounded-lg border border-outline-variant peer-checked:bg-surface-variant peer-checked:border-outline peer-checked:text-on-surface text-on-surface-variant transition-all font-label-sm text-sm">
+                                Beginner
+                            </div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="level" type="radio" value="intermediate"/>
+<div class="text-center px-2 py-2 rounded-lg border border-outline-variant peer-checked:bg-secondary-fixed peer-checked:border-secondary peer-checked:text-on-secondary-fixed-variant text-on-surface-variant transition-all font-label-sm text-sm">
+                                Intermediate
+                            </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="level" type="radio" value="advanced"/>
+<div class="text-center px-2 py-2 rounded-lg border border-outline-variant peer-checked:bg-primary-fixed peer-checked:border-primary peer-checked:text-on-primary-fixed-variant text-on-surface-variant transition-all font-label-sm text-sm">
+                                Advanced
+                            </div>
+</label>
+</div>
+</div>
+</div>
+<div class="px-6 py-4 bg-surface-container-lowest border-t border-surface-variant flex justify-end gap-3">
+<button class="px-5 py-2 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="document.getElementById('addSkillModal').style.display='none'">
+                    Cancel
+                </button>
+<button class="px-5 py-2 rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary font-label-md text-label-md transition-colors shadow-sm active:scale-95">
+                    Add Skill
+                </button>
+</div>
+</div>
+</div>
+<!-- Script for demo purposes to open modal -->
+<script>
+        document.querySelector('button:has(span.material-symbols-outlined:contains("add"))').addEventListener('click', function() {
+            const modal = document.getElementById('addSkillModal');
+            modal.style.display = 'flex';
+        });
+    </script>
+</body></html>

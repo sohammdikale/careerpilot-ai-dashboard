@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Intelligence - CareerPilot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e9edff",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "on-tertiary-fixed": "#351000",
+                        "on-background": "#141b2b",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-bright": "#f9f9ff",
+                        "surface-container-low": "#f1f3ff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#4d44e3",
+                        "surface-container-highest": "#dce2f7",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#293040",
+                        "secondary": "#4648d4",
+                        "secondary-container": "#6063ee",
+                        "on-secondary-fixed": "#07006c",
+                        "tertiary-container": "#a44100",
+                        "on-surface-variant": "#464555",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9ff",
+                        "secondary-fixed": "#e1e0ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d3daef",
+                        "primary-fixed": "#e2dfff",
+                        "surface-variant": "#dce2f7",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface": "#141b2b",
+                        "outline": "#777587",
+                        "inverse-primary": "#c3c0ff",
+                        "primary": "#3525cd",
+                        "on-primary-container": "#dad7ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#7e3000",
+                        "primary-container": "#4f46e5",
+                        "outline-variant": "#c7c4d8",
+                        "on-tertiary-container": "#ffd2be",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e1e8fd",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-xs": "4px",
+                        "unit-lg": "24px",
+                        "unit-sm": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit-md": "16px",
+                        "unit-xl": "48px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #f9f9ff; color: #141b2b; }
+        .ambient-shadow { box-shadow: 0 10px 30px -5px rgba(53, 37, 205, 0.05); }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid #e5e7eb; }
+    </style>
+</head>
+<body class="flex bg-surface text-on-surface">
+<!-- NavigationDrawer -->
+<nav class="hidden lg:flex flex-col h-screen fixed left-0 top-0 py-unit-lg h-full w-72 rounded-r-xl bg-surface dark:bg-surface-container border-r border-outline-variant shadow-lg z-40">
+<div class="px-margin-desktop mb-unit-xl flex items-center">
+<span class="font-display text-headline-md font-bold text-primary mr-3">CareerPilot AI</span>
+</div>
+<div class="flex-1 flex flex-col gap-unit-xs">
+<a class="flex items-center text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary">analytics</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center bg-secondary-container text-on-secondary-container font-semibold rounded-lg ml-2 mr-4 px-4 py-3 translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-secondary-container">speed</span>
+<span class="font-label-md text-label-md">Resume Score</span>
+</a>
+<a class="flex items-center text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary">auto_awesome</span>
+<span class="font-label-md text-label-md">AI Optimizer</span>
+</a>
+<a class="flex items-center text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary">fact_check</span>
+<span class="font-label-md text-label-md">ATS Check</span>
+</a>
+<a class="flex items-center text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-lg transition-colors group mt-auto" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto px-margin-desktop border-t border-outline-variant pt-unit-md mt-unit-lg flex items-center">
+<img class="w-10 h-10 rounded-full object-cover mr-3 bg-surface-container" data-alt="A small circular avatar placeholder image showing a generic user silhouette or abstract colorful profile picture. Clean, soft lighting, modern minimalist style matching a professional AI app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-EAn9pqrC9Akq0VZh3y5P76nIiF6sb0oVkkLLbXjnNHrIN1LoolntS1NM2tZbOA_7knxboGQcN9Ou1IyuTL1kq_MAUlRlC1vO2KE8b3Fx0fiPFMUxhQGTkNbMY3qrer6fX8gOss0GYGUDtLQ6kzO9UcXjzzH8n0Q7il4f_PBTMwdb6NBc4Ac4SloUoMBamXdH7Qk9EcFBFVa_wwElCK_S7DX8iUqrvAabGNaxA-Mu-owIDzfx-8na"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">CareerPilot AI</p>
+<p class="font-label-sm text-label-sm text-outline">Professional Plan</p>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 lg:ml-72 flex flex-col min-h-screen relative">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-background border-b border-outline-variant shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop py-unit-md transition-colors">
+<div class="flex items-center">
+<button class="md:hidden mr-3 text-primary p-2 hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Resume Intelligence</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<img class="w-10 h-10 rounded-full object-cover bg-surface-container border border-outline-variant" data-alt="A small circular avatar placeholder image showing a generic user silhouette or abstract colorful profile picture. Clean, soft lighting, modern minimalist style matching a professional AI app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA99-UILTsm4Izp6sNvRfn6JDXtT1VyrNGDO_kD2mGuUpkLWmcnFz7wbk3k8vM3ITXO8kapFF1VP8tHDMNeE8Yjqzf-Fz4K7ybrPat2BkFrnblJDNFHUym-0CFvjN88auWXCB4U0WiQy6jaKpklIPxOfnRPAlZvVveDHqEbeGEREzrk7wXVLcikcRu7gt1JFNinDpmIK5O_JF-j-wX9hvSedc8UJij6bp8EChagCFiih5_gNfr50GQd"/>
+</div>
+</header>
+<div class="px-margin-mobile md:px-margin-desktop py-unit-xl max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-unit-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Resume Intelligence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Understand how well your resume matches your target career.</p>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Left Column -->
+<div class="xl:col-span-8 flex flex-col gap-unit-lg">
+<!-- Upload Section / Preview -->
+<div class="glass-card rounded-[24px] p-unit-lg ambient-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="flex items-center justify-between mb-unit-md">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                                 Active Document
+                             </h3>
+</div>
+<!-- Uploaded State -->
+<div class="flex flex-col md:flex-row items-center justify-between bg-surface-container-low p-unit-md rounded-xl border border-outline-variant">
+<div class="flex items-center gap-4 mb-4 md:mb-0">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Alex_Sharma_Resume.pdf</p>
+<p class="font-label-sm text-label-sm text-outline">Uploaded Today • 1.2 MB</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface text-on-surface font-label-md border border-outline-variant hover:bg-surface-container transition-colors text-sm">View</button>
+<button class="px-4 py-2 rounded-lg bg-surface text-on-surface font-label-md border border-outline-variant hover:bg-surface-container transition-colors text-sm">Replace</button>
+<button class="p-2 rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Comparison Grid (Bento style) -->
+<div class="glass-card rounded-[24px] p-unit-lg ambient-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-center mb-unit-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">model_training</span>
+                                 Resume Improvement Comparison
+                             </h3>
+<span class="px-3 py-1 bg-surface-container text-primary font-label-sm rounded-full">AI Generated</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-md relative">
+<!-- Connector arrow for desktop -->
+<div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-surface rounded-full shadow-md items-center justify-center text-outline">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<!-- Before -->
+<div class="bg-surface-container-low p-unit-md rounded-xl border border-outline-variant opacity-80">
+<div class="flex items-center gap-2 mb-3 text-outline">
+<span class="material-symbols-outlined text-sm">history</span>
+<span class="font-label-sm uppercase tracking-wider">Before</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-through decoration-outline-variant">"Created a machine learning model."</p>
+</div>
+<!-- After -->
+<div class="bg-primary-fixed p-unit-md rounded-xl border border-primary-fixed-dim relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center gap-2 mb-3 text-primary">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span class="font-label-sm uppercase tracking-wider font-bold">After (Recommended)</span>
+</div>
+<p class="font-body-md text-body-md text-on-primary-fixed relative z-10">"Developed a machine learning classification model achieving 91% accuracy using Scikit-learn."</p>
+</div>
+</div>
+<div class="mt-unit-lg flex justify-end">
+<button class="bg-primary-container text-on-primary-container hover:scale-95 transition-transform duration-150 px-6 py-3 rounded-lg font-label-md flex items-center gap-2 shadow-sm">
+                                Improve Resume
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- AI Recommendations -->
+<div class="glass-card rounded-[24px] p-unit-lg ambient-shadow hover:-translate-y-1 transition-transform duration-300">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-unit-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+                             AI Recommendations
+                        </h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-xl border-l-4 border-emerald-500">
+<span class="material-symbols-outlined text-emerald-600 mt-0.5">check_circle</span>
+<div>
+<p class="font-label-md text-on-surface">Add measurable project outcomes</p>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Quantifying your impact increases callback rates by 40%.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-xl border-l-4 border-emerald-500">
+<span class="material-symbols-outlined text-emerald-600 mt-0.5">check_circle</span>
+<div>
+<p class="font-label-md text-on-surface">Improve technical project descriptions</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 bg-error-container/30 rounded-xl border-l-4 border-error">
+<span class="material-symbols-outlined text-error mt-0.5">warning</span>
+<div>
+<p class="font-label-md text-on-surface">Add deployment-related keywords</p>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Missing key terms like Docker, AWS, or CI/CD for this role.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 bg-error-container/30 rounded-xl border-l-4 border-error">
+<span class="material-symbols-outlined text-error mt-0.5">warning</span>
+<div>
+<p class="font-label-md text-on-surface">Strengthen professional summary</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Sticky Sidebar) -->
+<div class="xl:col-span-4 flex flex-col gap-unit-lg">
+<!-- Score Card -->
+<div class="glass-card rounded-[24px] p-unit-lg ambient-shadow text-center flex flex-col items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-unit-lg">Overall Score</h3>
+<!-- Circular Progress -->
+<div class="relative w-40 h-40 mb-unit-lg">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#e9edff" stroke-width="8"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="45" stroke="#4f46e5" stroke-dasharray="283" stroke-dashoffset="51" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display text-display text-primary">82</span>
+<span class="font-label-sm text-outline">/ 100</span>
+</div>
+</div>
+<!-- Breakdown -->
+<div class="w-full space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-on-surface-variant">ATS Compatibility</span>
+<span class="font-label-md font-bold text-primary">82%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width: 82%"></div></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-on-surface-variant">Keywords</span>
+<span class="font-label-md font-bold text-primary">88%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width: 88%"></div></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-on-surface-variant">Projects</span>
+<span class="font-label-md font-bold text-primary">75%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width: 75%"></div></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-on-surface-variant">Impact</span>
+<span class="font-label-md font-bold text-primary">70%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width: 70%"></div></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-on-surface-variant">Formatting</span>
+<span class="font-label-md font-bold text-primary">91%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5"><div class="bg-primary h-1.5 rounded-full" style="width: 91%"></div></div>
+</div>
+</div>
+<!-- Analysis Lists -->
+<div class="glass-card rounded-[24px] p-unit-lg ambient-shadow">
+<div class="mb-unit-md">
+<h4 class="font-label-md text-on-surface flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-emerald-600 text-sm">thumb_up</span>
+                                Resume Strengths
+                            </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant rounded-full font-label-sm text-on-surface-variant">Strong technical skills</span>
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant rounded-full font-label-sm text-on-surface-variant">Good formatting</span>
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant rounded-full font-label-sm text-on-surface-variant">Relevant projects</span>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-unit-md mt-unit-md">
+<h4 class="font-label-md text-on-surface flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-error text-sm">error</span>
+                                Missing Elements
+                            </h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-error-container/20 border border-error-container rounded-full font-label-sm text-on-surface-variant">More measurable results</span>
+<span class="px-3 py-1 bg-error-container/20 border border-error-container rounded-full font-label-sm text-on-surface-variant">Deployment experience</span>
+<span class="px-3 py-1 bg-error-container/20 border border-error-container rounded-full font-label-sm text-on-surface-variant">Stronger summary</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container-lowest border-t border-outline-variant shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 max-w-container-max mx-auto">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-16" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-sm text-label-sm text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-unit-md py-1 scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">speed</span>
+<span class="font-label-sm text-label-sm text-[10px]">Score</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-16" href="#">
+<span class="material-symbols-outlined mb-1">work</span>
+<span class="font-label-sm text-label-sm text-[10px]">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-16" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>
